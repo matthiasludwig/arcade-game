@@ -78,11 +78,10 @@ Player.prototype.handleInput = function(keyCode) {
 
 Player.prototype.checkCollisions = function() {
       for (var i = 0; i < allEnemies.length; i++) {
-        /*add calculation to determine row*/
         if (this.x >= allEnemies[i].x + 0 &&
             this.x < allEnemies[i].x + 50 &&
             this.y >= allEnemies[i].y + 0 &&
-            this.y < allEnemies[i].y + 50) {
+            this.y <  allEnemies[i].y + 50) {
                 this.x = 202;
                 this.y = 400;
         }
