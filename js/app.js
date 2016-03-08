@@ -1,3 +1,11 @@
+var TILE_WIDTH = 101,
+    TILE_HEIGHT = 83;
+
+var PlayerStart = {
+    x: 202,
+    y: 400
+};
+
 // Enemies our player must avoid
 var Enemy = function(xvariable, yvariable, speed) {
     // Variables applied to each of our instances go here,
@@ -21,7 +29,7 @@ Enemy.prototype.update = function(dt) {
         this.x = this.x - 707;
     }
     this.x = this.x + (this.move * dt);
-    this.render()
+    this.render();
 };
 
 // Draw the enemy on the screen, required method for game
@@ -48,11 +56,11 @@ Player.prototype.update = function(x,y) {
     if (y <= 400) {
         this.y = y;
     }
-    if (y < 72) {
-        this.x = 202;
-        this.y = 400;
+    if (y < 50) {
+        this.x = PlayerStart.x;
+        this.y = PlayerStart.y;
     }
-    console.log(this.x , this.y)
+    console.log(this.x,this.y)
     this.render();
 };
 
@@ -62,18 +70,17 @@ Player.prototype.render = function() {
 
 Player.prototype.handleInput = function(keyCode) {
     if (keyCode === 'left') {
-        this.update(this.x - 101, this.y);
+        this.update(this.x - TILE_WIDTH, this.y);
     }
     if (keyCode === 'up') {
-        this.update(this.x, this.y - 82);
+        this.update(this.x, this.y - TILE_HEIGHT);
     }
     if (keyCode === 'right') {
-        this.update(this.x + 101, this.y);
+        this.update(this.x + TILE_WIDTH, this.y);
     }
     if (keyCode === 'down') {
-        this.update(this.x, this.y + 82);
+        this.update(this.x, this.y + TILE_HEIGHT);
     }
-
 };
 
 Player.prototype.checkCollisions = function() {
@@ -82,8 +89,8 @@ Player.prototype.checkCollisions = function() {
             this.x < allEnemies[i].x + 50 &&
             this.y >= allEnemies[i].y + 0 &&
             this.y <  allEnemies[i].y + 50) {
-                this.x = 202;
-                this.y = 400;
+                this.x = PlayerStart.x;
+                this.y = PlayerStart.y;
         }
     }
 };
@@ -100,7 +107,7 @@ var enemy6 = new Enemy(-202, 230, 1.5);
 
 var allEnemies = [enemy1, enemy2, enemy3, enemy4, enemy5, enemy6];
 
-var player = new Player(202, 400); // Start the player in the bottom row in the middle at the beginning
+var player = new Player(PlayerStart.x, PlayerStart.y); // Start the player in the bottom row in the middle at the beginning
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
@@ -111,6 +118,5 @@ document.addEventListener('keyup', function(e) {
         39: 'right',
         40: 'down'
     };
-
     player.handleInput(allowedKeys[e.keyCode]);
 });
