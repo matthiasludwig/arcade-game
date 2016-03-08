@@ -1,6 +1,25 @@
-frontend-nanodegree-arcade-game
-===============================
+# How to play
 
-Students should use this [rubric](https://www.udacity.com/course/viewer/#!/c-nd001/l-2696458597/m-2687128535) for self-checking their submission.
+You can play the character with your keyboard.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+The arrow keys _'Left', 'Right', 'Up' and 'Down'_ move the player accordingly.  
+The **enemies** spawn with different speed from the left and move to the right. After they vanish, they respawn on the left side.
+
+## The goal
+
+The goal of the game is to reach the water. Is that goal reached, the player is reset to the starting position.  
+Should the player hit one of the **enemies**, he will also be reset to the beginning
+
+# TODO
+
+Following features are planned for the future
+
+* Lives and Points
+* Player Selection (between different characters)
+* Power-Up special features
+* Bigger playing field
+
+# Done with the help of
+
+* [Udacity classes](www.udacity.com)
+* [MDN](https://developer.mozilla.org/en-US/)
