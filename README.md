@@ -1,5 +1,6 @@
 # How to play
-
+  
+Just click [here](/index.html)  
 You can play the character with your keyboard.
 
 The arrow keys _'Left', 'Right', 'Up' and 'Down'_ move the player accordingly.  
