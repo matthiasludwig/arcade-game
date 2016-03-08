@@ -1,6 +1,7 @@
 # How to play
   
-Just click [here](/index.html)  
+**Just click [here](https://rawgit.com/matthiasludwig/arcade-game/master/index.html) to start the game!**  
+  
 You can play the character with your keyboard.
 
 The arrow keys _'Left', 'Right', 'Up' and 'Down'_ move the player accordingly.  
